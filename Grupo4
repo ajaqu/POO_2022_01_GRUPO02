@@ -1,0 +1,2578 @@
+#include <iostream>
+#include <string.h>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <conio.h>
+
+using namespace std;
+
+class Administrador
+{
+    private:
+        
+        string Usuario;
+        string Clave;
+
+    public:
+
+        //Constuctor
+        Administrador(string,string);
+        Administrador()
+        {
+
+        }
+        ~Administrador()
+        {
+
+        }
+
+        //Setters
+        void   set_usaurio(string);
+        void   set_clave(string);
+
+        //Getters
+        string get_usuario();
+        string get_clave();
+
+        //Metodos
+};
+
+Administrador::Administrador(string usuario, string clave)
+{
+    Usuario = usuario;
+    Clave = clave;
+}
+
+void Administrador::set_usaurio(string usuario)
+{
+    Usuario = usuario;
+}
+
+void Administrador::set_clave(string clave)
+{
+    Clave = clave;
+}
+
+string Administrador::get_usuario()
+{
+    return Usuario;
+}
+
+string Administrador::get_clave()
+{
+    return Clave;
+}
+
+
+
+
+
+#include <iostream>
+#include <string.h>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <conio.h>
+
+using namespace std;
+
+class Cliente
+{
+    private:
+        int    Codigo;
+        string Nombre;
+        string Apellido;
+        string Correo;
+        string Direccion;
+        string Dia;
+        string Mes;
+        string Fecha_a;
+
+    public:
+
+        //Constuctor
+        Cliente(int,string,string,string,string,string,string,string);
+        Cliente()
+        {
+
+        }
+        ~Cliente()
+        {
+
+        }
+
+        //Setters
+        void set_nombre(string);
+        void set_apellido(string);
+        void set_correo(string);
+        void set_direccion(string);
+        void set_codigo(int);
+        void set_dia(string);
+        void set_mes(string);
+        void set_fecha_a(string);
+
+        //Getters
+        string get_nombre();
+        string get_apellido();
+        string get_correo();
+        string get_direccion();
+        int    get_codigo();
+        string get_dia();
+        string get_mes();
+        string get_fecha_a();
+};
+
+Cliente::Cliente(int codigo, string nombre, string apellido, string correo, string direccion,string dia, string mes, string fecha_a)
+{
+    Codigo    = codigo;
+    Nombre    = nombre;
+    Apellido  = apellido;
+    Correo    = correo;
+    Direccion = direccion;
+    Dia       = dia;
+    Mes       = mes;
+    Fecha_a   = fecha_a;
+}
+
+void Cliente::set_nombre(string nombre)
+{
+    Nombre = nombre;
+}
+
+void Cliente::set_apellido(string apellido)
+{
+    Apellido = apellido;
+}
+
+void Cliente::set_correo(string correo)
+{
+    Correo = correo;
+}
+
+void Cliente::set_direccion(string direccion)
+{
+    Direccion = direccion;
+}
+
+void Cliente::set_codigo(int codigo)
+{
+    Codigo = codigo;
+}
+
+void Cliente::set_dia(string dia)
+{
+    Dia = dia;
+}
+
+void Cliente::set_mes(string mes)
+{
+    Mes = mes;
+}
+
+void Cliente::set_fecha_a(string fecha_a)
+{
+    Fecha_a = fecha_a;
+}
+
+
+string Cliente::get_nombre()
+{
+    return Nombre;
+}
+
+string Cliente::get_apellido()
+{
+    return Apellido;
+}
+
+string Cliente::get_correo()
+{
+    return Correo;
+}
+
+string Cliente::get_direccion()
+{
+    return Direccion;
+}
+
+int Cliente::get_codigo()
+{
+    return Codigo;
+}
+
+string Cliente::get_dia()
+{
+    return Dia;
+}
+
+string Cliente::get_mes()
+{
+    return Mes;
+}
+
+string Cliente::get_fecha_a()
+{
+    return Fecha_a;
+}
+
+
+
+#pragma once
+#include <iostream>
+#include <string.h>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <conio.h>
+
+using namespace std;
+
+class Producto
+{
+    private:
+        int    Codigo_vendedor;
+        int    Codigo_compra;
+        int    Codigo_producto;
+        string Tipo_de_producto;
+        int    Cantidad;
+        double Precio_total;
+        double Precio_total_compra;
+        double Precio_unidad;
+        
+    public:
+
+        //Constuctor
+        Producto(int,int,int,string,int,double,double,double);
+        Producto()
+        {
+
+        }
+        ~Producto()
+        {
+
+        }
+
+        //Setters
+        void set_codigo_vendedor(int);
+        void set_codigo_compra(int);
+        void set_codigo_producto(int);
+        void set_tipo_de_producto(string);
+        void set_cantidad(int);
+        void set_precio_total(double);
+        void set_precio_unidad(double);
+        void set_precio_total_compra(double);
+
+        //Getters
+        int    get_codigo_vendedor();
+        int    get_codigo_compra();
+        int    get_codigo_producto();
+        string get_tipo_de_producto();
+        int    get_cantidad();
+        double get_precio_total();
+        double get_precio_unidad();
+        double get_precio_total_compra();
+
+        //Metodos
+        double calcular_importe();
+};
+
+Producto::Producto(int codigo_vendedor, int codigo_compra, int codigo_producto, string tipo_de_producto, int cantidad, double precio_total, double precio_total_compra, double precio_unidad)
+{
+    Codigo_vendedor                  =codigo_vendedor;
+    Codigo_compra                    =codigo_compra;
+    Codigo_producto                  =codigo_producto;
+    Tipo_de_producto                 =tipo_de_producto;
+    Cantidad                         =cantidad;
+    Precio_total                     =precio_total;
+    Precio_unidad                    =precio_unidad;
+    Precio_total_compra              =precio_total_compra;
+}
+
+
+//Setters
+void Producto::set_codigo_vendedor(int codigo_vendedor)
+{
+    Codigo_vendedor = codigo_vendedor;
+}
+
+void Producto::set_codigo_compra(int codigo_compra)
+{
+    Codigo_compra = codigo_compra;
+}
+
+void Producto::set_codigo_producto(int codigo_producto)
+{
+    Codigo_producto = codigo_producto;
+}
+
+void Producto::set_tipo_de_producto(string tipo_de_producto)
+{
+    Tipo_de_producto=tipo_de_producto;
+}
+
+void Producto::set_cantidad(int cantidad)
+{
+    Cantidad=cantidad;
+}
+
+void Producto::set_precio_total(double precio_total)
+{
+    Precio_total=precio_total;
+}
+
+void Producto::set_precio_unidad(double precio_unidad)
+{
+    Precio_unidad=precio_unidad;
+}
+
+void Producto::set_precio_total_compra(double precio_total_compra)
+{
+    Precio_total_compra = precio_total_compra;
+}
+
+
+//Getters
+int Producto::get_codigo_vendedor()
+{
+    return Codigo_vendedor;
+}
+
+int Producto::get_codigo_compra()
+{
+    return Codigo_compra;
+}
+
+int Producto::get_codigo_producto()
+{
+    return Codigo_producto;
+}
+
+string Producto::get_tipo_de_producto()
+{
+    return Tipo_de_producto;
+}
+
+int Producto::get_cantidad()
+{
+    return Cantidad;
+}
+
+double Producto::get_precio_total()
+{
+    return Precio_total;
+}
+
+double Producto::get_precio_unidad()
+{
+    return Precio_unidad;
+}
+
+double Producto::get_precio_total_compra()
+{
+    return Precio_total_compra;
+}
+
+//Metodos
+double Producto::calcular_importe()
+{
+    return (Precio_total*Cantidad);
+}
+
+
+
+#include <iostream>
+#include <string.h>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <conio.h>
+#include "Administrador.h"
+#include <fstream>
+
+using namespace std;
+
+class AdministradorVector
+{
+    private:
+        vector <Administrador> Vector_de_Administradores;
+
+    public: 
+        AdministradorVector(vector<Administrador>);
+        AdministradorVector()
+        {
+            
+        }
+        ~AdministradorVector()
+        {
+        }
+
+        //Metodos
+        void            agregar_admis(Administrador);
+        void            guardar_admis_archivo(Administrador);
+        void            cargar_admis_archivo();
+        int             cantidad_de_registros_admi();
+        int             buscar_por_usuario(string);
+        int             buscar_por_clave(string);
+        Administrador   get_objeto(int);
+};
+
+AdministradorVector::AdministradorVector(vector<Administrador> vector_de_admis)
+{
+    Vector_de_Administradores = vector_de_admis;
+}
+
+void AdministradorVector::agregar_admis(Administrador objA)
+{
+    Vector_de_Administradores.push_back(objA);
+}
+
+void AdministradorVector::guardar_admis_archivo(Administrador objA)
+{
+    try
+    {
+        fstream archivo_de_productos;
+        archivo_de_productos.open(R"(..\docs\Administradores.csv)", ios::app);
+        if (archivo_de_productos.is_open())
+        {
+            archivo_de_productos << objA.get_usuario() <<";" <<objA.get_clave() <<";" <<endl; 
+            archivo_de_productos.close();
+        }
+    }
+    catch(exception e)
+    {
+        cout << "Ocurrio un error al grabar el archivo!!!";
+    }
+}
+
+void AdministradorVector::cargar_admis_archivo()
+{
+    try
+    {
+        int     i;
+        size_t  posi; 
+        string  linea;
+        string  temporal[2];
+        fstream archivo_de_productos;
+
+        archivo_de_productos.open(R"(..\docs\Administradores.csv)", ios::in);
+
+        if(archivo_de_productos.is_open())
+        {
+            while (!archivo_de_productos.eof())
+            {
+                while (getline(archivo_de_productos,linea))
+                {
+                    i=0;
+                    while ((posi = linea.find(";")) != string::npos)
+                    {
+                        temporal[i] = linea.substr(0,posi);
+                        linea.erase(0, posi+1);
+                        i++;
+                    }
+                    Administrador objA;
+                    objA.set_usaurio((temporal[0]));
+                    objA.set_clave(temporal[1]);
+
+                    agregar_admis(objA);
+                }
+            }
+        }
+        archivo_de_productos.close();
+    }
+    catch(exception e)
+    {
+        cout << "!!!Ocurrio un ERROR!!!";
+    }
+}
+
+int AdministradorVector::cantidad_de_registros_admi()
+{
+    return Vector_de_Administradores.size();
+}
+
+int AdministradorVector::buscar_por_usuario(string usuario)
+{
+    for (Administrador x: Vector_de_Administradores)
+    {
+        if (usuario==x.get_usuario())
+        {
+            return 1;
+        }
+    }
+    return -1;
+}
+
+int AdministradorVector::buscar_por_clave(string clave)
+{
+    for (Administrador x: Vector_de_Administradores)
+    {
+        if (clave==x.get_clave())
+        {
+            return 1;
+        }
+    }
+    return -1;
+}
+
+Administrador AdministradorVector::get_objeto(int pos)
+{
+    return Vector_de_Administradores[pos];
+}
+
+
+
+#include <iostream>
+#include <string.h>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <conio.h>
+#include "Cliente.h"
+#include <fstream>
+
+using namespace std;
+
+class Cliente_vector
+{
+    private:
+        vector <Cliente> Vector_clientes;
+
+    public:
+        Cliente_vector(vector<Cliente>);
+        Cliente_vector()
+        {
+            
+        }
+        ~Cliente_vector()
+        {
+        }
+
+        void            agregar_clientes(Cliente);
+        void            guardar_clientes_archivo(Cliente);
+        void            cargar_clientes_archivo();
+        int             cantidad_de_registros_cliente();
+        Cliente         get_objeto(int);
+        int             get_correlativo_codigo_compra();
+};
+
+void Cliente_vector::agregar_clientes(Cliente objC)
+{
+    Vector_clientes.push_back(objC);
+}
+
+int Cliente_vector::cantidad_de_registros_cliente()
+{
+    return Vector_clientes.size();
+}
+
+void Cliente_vector::guardar_clientes_archivo(Cliente objC)
+{
+    try
+    {
+        fstream archivo_de_productos;
+        archivo_de_productos.open(R"(..\docs\Clientes.csv)", ios::app);
+        if (archivo_de_productos.is_open())
+        {
+            archivo_de_productos << objC.get_codigo() <<";" << objC.get_nombre() <<";" << objC.get_apellido() <<";" << objC.get_correo() <<";" << objC.get_direccion() <<";" << objC.get_dia() <<";"  << objC.get_mes() <<";"  << objC.get_fecha_a() <<";"  <<endl;
+            archivo_de_productos.close();
+        }
+    }
+    catch(exception e)
+    {
+        cout << "Ocurrio un error al grabar el archivo!!!";
+    }
+}
+
+void Cliente_vector::cargar_clientes_archivo()
+{
+    try
+    {
+        int     i;
+        size_t  posi; 
+        string  linea;
+        string  temporal[8];
+        fstream archivo_de_productos;
+
+        archivo_de_productos.open(R"(..\docs\Clientes.csv)", ios::in);
+
+        if(archivo_de_productos.is_open())
+        {
+            while (!archivo_de_productos.eof())
+            {
+                while (getline(archivo_de_productos,linea))
+                {
+                    i=0;
+                    while ((posi = linea.find(";")) != string::npos)
+                    {
+                        temporal[i] = linea.substr(0,posi);
+                        linea.erase(0, posi+1);
+                        i++;
+                    }
+                    Cliente objC;
+                    objC.set_codigo((std::stoi (temporal[0])));
+                    objC.set_nombre((temporal[1]));
+                    objC.set_apellido(temporal[2]);
+                    objC.set_correo(temporal[3]);
+                    objC.set_direccion(temporal[4]);
+                    objC.set_dia(temporal[5]);
+                    objC.set_mes(temporal[6]);
+                    objC.set_fecha_a(temporal[7]);
+
+                    agregar_clientes(objC);
+                }
+            }
+        }
+        archivo_de_productos.close();
+    }
+    catch(exception e)
+    {
+        cout << "!!!Ocurrio un ERROR!!!";
+    }
+}
+
+Cliente Cliente_vector::get_objeto(int pos)
+{
+    return Vector_clientes[pos];
+}
+
+int Cliente_vector::get_correlativo_codigo_compra()
+{
+    if (Vector_clientes.size()==0)
+    {
+        return 0;
+    }
+    else
+    {
+        return Vector_clientes[Vector_clientes.size()-1].get_codigo()+1;
+    }
+}
+
+
+
+#include <iostream>
+#include <string.h>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <conio.h>
+#include "Producto.h"
+
+using namespace std;
+
+class Vector_Facturas
+{
+    private:
+        vector <Producto> Vector_de_Facturas;
+
+    public:
+        Vector_Facturas(vector<Producto>);
+        Vector_Facturas()
+        {
+            
+        }
+        ~Vector_Facturas()
+        {
+        }
+
+        void agregar_compra(Producto);
+        int  cantidad_facturas_registros();
+        void guardar_factura(Producto);
+        void cargar_facturas();
+        Producto get_objeto(int);
+};
+
+Vector_Facturas::Vector_Facturas(vector<Producto> vector_de_Facturas)
+{
+    Vector_de_Facturas=vector_de_Facturas;
+}
+
+
+void Vector_Facturas::agregar_compra(Producto objP)
+{
+    Vector_de_Facturas.push_back(objP);
+}
+
+
+int Vector_Facturas::cantidad_facturas_registros()
+{
+    return Vector_de_Facturas.size();
+}
+
+
+void Vector_Facturas::guardar_factura(Producto objP)
+{
+    try
+    {
+        fstream archivo_de_facturas;
+        archivo_de_facturas.open(R"(..\docs\Ventas.csv)", ios::app);
+        if (archivo_de_facturas.is_open())
+        {
+            archivo_de_facturas << objP.get_codigo_vendedor() <<";" << objP.get_codigo_compra() <<";" << objP.get_codigo_producto() <<";" <<objP.get_tipo_de_producto() <<";" <<objP.get_precio_unidad() <<";" <<objP.get_cantidad() <<";" <<objP.get_precio_total() <<";" <<endl;
+            archivo_de_facturas.close();
+        }
+    }
+    catch(exception e)
+    {
+        cout << "Ocurrio un error al grabar el archivo!!!";
+    }
+}
+
+
+void Vector_Facturas::cargar_facturas()
+{
+    try
+    {
+        int     i;
+        size_t  posi; 
+        string  linea;
+        string  temporal[7];
+        fstream archivo_de_facturas;
+
+        archivo_de_facturas.open(R"(..\docs\Ventas.csv)", ios::in);
+
+        if(archivo_de_facturas.is_open())
+        {
+            while (!archivo_de_facturas.eof())
+            {
+                while (getline(archivo_de_facturas,linea))
+                {
+                    i=0;
+                    while ((posi = linea.find(";")) != string::npos)
+                    {
+                        temporal[i] = linea.substr(0,posi);
+                        linea.erase(0, posi+1);
+                        i++;
+                    }
+                    Producto objP;
+                    objP.set_codigo_vendedor(std::stoi(temporal[0]));
+                    objP.set_codigo_compra(std::stoi(temporal[1]));
+                    objP.set_codigo_producto(std::stoi(temporal[2]));
+                    objP.set_tipo_de_producto(temporal[3]);
+                    objP.set_precio_unidad(std::stod(temporal[4]));
+                    objP.set_cantidad(std::stoi(temporal[5]));
+                    objP.set_precio_total(std::stod(temporal[6]));
+
+                    agregar_compra(objP);
+                }
+            }
+        }
+        archivo_de_facturas.close();
+    }
+    catch(exception e)
+    {
+        cout << "!!!Ocurrio un ERROR!!!";
+    }
+}
+
+
+Producto Vector_Facturas::get_objeto(int pos)
+{
+    return Vector_de_Facturas[pos];
+}
+
+
+
+
+#include <iostream>
+#include <string.h>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <conio.h>
+#include "Producto.h"
+#include <fstream>
+
+
+using namespace std;
+using std::stoi;
+
+class ProductoVector
+{
+    private:
+
+        vector <Producto> Vector_de_productos;
+
+    public:
+
+        //Constructor
+        ProductoVector(vector<Producto>);
+        ProductoVector()
+        {
+            
+        }
+        ~ProductoVector()
+        {
+        }
+
+        //Setters
+        //Getters
+        //Metodos
+        void     agregar_productos(Producto);
+        Producto get_objeto(int);
+        int      cantidad_registros();
+        void     eliminar_productos(int);
+        int      get_posicion(Producto);
+        void     modificiar_precio(double, int);
+        void     modificiar_cantidad(double, int);  
+        void     grabar_modificar_eliminar_archivo();
+        void     modificiar_precio_total(double, int);
+        void     modificiar_codigo_compra(double, int);
+        int      get_correlativo();
+        void     guardar_archivo_producto(Producto objP);
+        void     cargar_productos_archivos();
+        void     vaciar_vector();
+};
+
+void ProductoVector::modificiar_codigo_compra(double cantidad, int pos)
+{
+        Vector_de_productos[pos].set_codigo_compra(cantidad) ;
+}
+
+ProductoVector::ProductoVector(vector<Producto> vector_de_productos)
+{
+    this->Vector_de_productos=vector_de_productos;
+}
+
+
+void ProductoVector::modificiar_precio(double precio, int pos)
+{
+        Vector_de_productos[pos].set_precio_unidad(precio);
+}
+
+
+void ProductoVector::modificiar_cantidad(double cantidad, int pos)
+{
+        Vector_de_productos[pos].set_cantidad(cantidad) ;
+}
+
+
+void ProductoVector::modificiar_precio_total(double precio, int pos)
+{
+        Vector_de_productos[pos].set_precio_total(precio) ;
+}
+
+
+void ProductoVector::agregar_productos(Producto objP)
+{
+    Vector_de_productos.push_back(objP);
+}
+
+
+Producto ProductoVector::get_objeto(int pos)
+{
+    return Vector_de_productos[pos];
+}
+
+
+int ProductoVector::cantidad_registros()
+{
+    return Vector_de_productos.size();
+}
+
+
+int ProductoVector::get_posicion(Producto objP)
+{
+    for(int i=0; i<cantidad_registros(); i++)
+    {
+        if (objP.get_codigo_producto()==get_objeto(i).get_codigo_producto())
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+void ProductoVector::eliminar_productos(int posicion)
+{
+    Vector_de_productos.erase(Vector_de_productos.begin()+ posicion);
+}
+
+
+void ProductoVector::grabar_modificar_eliminar_archivo()
+{
+    try
+    {
+        fstream archivo_productos;
+        archivo_productos.open(R"(..\docs\Productos.csv)", ios::out);
+        if (archivo_productos.is_open())
+        {
+            for (Producto x : Vector_de_productos)
+            {
+                archivo_productos << x.get_codigo_producto() << ";" << x.get_tipo_de_producto() << ";" <<x.get_precio_unidad()  <<";" <<endl;
+            }
+            archivo_productos.close();
+        }
+    }
+    catch(exception e)
+    {
+        cout << "Ocurrio un error al grabar en el archivo: ";
+    }
+}
+
+
+int ProductoVector::get_correlativo()
+{
+    if (Vector_de_productos.size()==0)
+    {
+        return 0;
+    }
+    else
+    {
+        return Vector_de_productos[Vector_de_productos.size()-1].get_codigo_producto()+1;
+    }
+}
+
+
+void ProductoVector::guardar_archivo_producto(Producto objP)
+{
+    try
+    {
+        fstream archivo_de_productos;
+        archivo_de_productos.open(R"(..\docs\Productos.csv)", ios::app);
+        if (archivo_de_productos.is_open())
+        {
+            archivo_de_productos << objP.get_codigo_producto() <<";" <<objP.get_tipo_de_producto() <<";" <<objP.get_precio_unidad() <<";" <<endl;
+            archivo_de_productos.close();
+        }
+    }
+    catch(exception e)
+    {
+        cout << "Ocurrio un error al grabar el archivo!!!";
+    }
+}
+
+
+void ProductoVector::cargar_productos_archivos()
+{
+    try
+    {
+        int     i;
+        size_t  posi; 
+        string  linea;
+        string  temporal[3];
+        fstream archivo_de_productos;
+
+        archivo_de_productos.open(R"(..\docs\Productos.csv)", ios::in);
+
+        if(archivo_de_productos.is_open())
+        {
+            while (!archivo_de_productos.eof())
+            {
+                while (getline(archivo_de_productos,linea))
+                {
+                    i=0;
+                    while ((posi = linea.find(";")) != string::npos)
+                    {
+                        temporal[i] = linea.substr(0,posi);
+                        linea.erase(0, posi+1);
+                        i++;
+                    }
+                    Producto objP;
+                    objP.set_codigo_producto(std::stoi(temporal[0]));
+                    objP.set_tipo_de_producto(temporal[1]);
+                    objP.set_precio_unidad(std::stod(temporal[2]));
+
+                    agregar_productos(objP);
+                }
+            }
+        }
+        archivo_de_productos.close();
+    }
+    catch(exception e)
+    {
+        cout << "!!!Ocurrio un ERROR!!!";
+    }
+}
+
+
+void ProductoVector::vaciar_vector()
+{
+    Vector_de_productos.clear();
+}
+
+
+
+
+#include <iostream>
+#include <string.h>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <conio.h>
+#include <fstream>
+#include "Vendedor.h"
+
+using namespace std;
+
+class Vector_Vendedores
+{
+    private:
+        vector <Vendedor> Vector_ven;
+
+    public:
+        Vector_Vendedores(vector<Vendedor>);
+        Vector_Vendedores()
+        {
+            
+        }
+        ~Vector_Vendedores()
+        {
+        }
+
+    //Metodos
+    Vendedor get_objeto(int);
+    void     agregar_usuario(Vendedor);
+    void     guardar_vendedores_archivo(Vendedor);
+    void     cargar_vendedores_archivo();
+    int      buscar_por_usuario(string);
+    int      buscar_por_clave(string);
+    int      get_correlativo_codigo_vendedor();
+    int      cantidad_registros();
+};
+
+
+Vector_Vendedores::Vector_Vendedores(vector<Vendedor> vector_ven)
+{
+    Vector_ven = vector_ven;
+}
+
+Vendedor Vector_Vendedores::get_objeto(int posicion)
+{
+    return Vector_ven[posicion];
+}
+
+void Vector_Vendedores::agregar_usuario(Vendedor ObjV)
+{
+    Vector_ven.push_back(ObjV);
+}
+
+void Vector_Vendedores::guardar_vendedores_archivo(Vendedor ObjV)
+{
+    try
+    {
+        fstream archivo_de_vendedores;
+        archivo_de_vendedores.open(R"(..\docs\Vendedores.csv)", ios::app);
+        if (archivo_de_vendedores.is_open())
+        {
+            archivo_de_vendedores <<ObjV.get_codigo() <<";" <<ObjV.get_usuario() <<";" <<ObjV.get_clave() <<";" <<ObjV.get_nombre() <<";" <<ObjV.get_apellido() <<";" <<endl;
+            archivo_de_vendedores.close();
+        }
+    }
+    catch(exception e)
+    {
+        cout << "Ocurrio un error al grabar el archivo!!!";
+    }
+}
+
+void Vector_Vendedores::cargar_vendedores_archivo()
+{
+    try
+    {
+        int     i;
+        size_t  posi; 
+        string  linea;
+        string  temporal[5];
+        fstream archivo_de_productos;
+
+        archivo_de_productos.open(R"(..\docs\Vendedores.csv)", ios::in);
+
+        if(archivo_de_productos.is_open())
+        {
+            while (!archivo_de_productos.eof())
+            {
+                while (getline(archivo_de_productos,linea))
+                {
+                    i=0;
+                    while ((posi = linea.find(";")) != string::npos)
+                    {
+                        temporal[i] = linea.substr(0,posi);
+                        linea.erase(0, posi+1);
+                        i++;
+                    }
+                    Vendedor ObjV;
+                    ObjV.set_codigo(std::stoi(temporal[0]));
+                    ObjV.set_usuario(temporal[1]);
+                    ObjV.set_clave(temporal[2]);
+                    ObjV.set_nombre(temporal[3]);
+                    ObjV.set_apellido(temporal[4]);
+
+                    agregar_usuario(ObjV);
+                }
+            }
+        }
+        archivo_de_productos.close();
+    }
+    catch(exception e)
+    {
+        cout << "!!!Ocurrio un ERROR!!!";
+    }
+}
+
+int Vector_Vendedores::buscar_por_usuario(string usuario)
+{
+    for (Vendedor x: Vector_ven)
+    {
+        if (usuario==x.get_usuario())
+        {
+            return 1;
+        }
+    }
+    return -1;
+}
+
+int Vector_Vendedores::buscar_por_clave(string clave)
+{
+    for (Vendedor x: Vector_ven)
+    {
+        if (clave==x.get_clave())
+        {
+            return 1;
+        }
+    }
+    return -1;
+}
+
+int Vector_Vendedores::get_correlativo_codigo_vendedor()
+{
+    if (Vector_ven.size()==0)
+    {
+        return 0;
+    }
+    else
+    {
+        return Vector_ven[Vector_ven.size()-1].get_codigo()+1;
+    }
+}
+
+int Vector_Vendedores::cantidad_registros()
+{
+    return Vector_ven.size();
+}
+
+
+#include <iostream>
+#include <string.h>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <conio.h>
+
+using namespace std;
+
+class Vendedor
+{
+    private:
+        int    Codigo;
+        string Usuario;
+        string Clave;
+        string Nombre;
+        string Apellido;
+
+    public:
+        //Constuctor
+        Vendedor(int,string,string,string,string);
+        Vendedor()
+        {
+
+        }
+        ~Vendedor()
+        {
+
+        }
+
+        //Setters
+        void set_codigo(int);
+        void set_usuario(string);
+        void set_clave(string);
+        void set_nombre(string);
+        void set_apellido(string);
+
+        //Getters
+        int    get_codigo();
+        string get_usuario();
+        string get_clave();
+        string get_nombre();
+        string get_apellido();
+};
+
+Vendedor::Vendedor(int codigo,string usuario, string clave,string nombre, string apellido)
+{
+    Codigo   = codigo;
+    Usuario  = usuario;
+    Clave    = clave;
+    Nombre   = nombre;
+    Apellido = apellido;
+}
+
+void Vendedor::set_codigo(int codigo)
+{
+    Codigo = codigo;
+}
+
+void Vendedor::set_usuario(string usuario)
+{
+    Usuario = usuario;
+}
+
+void Vendedor::set_clave(string clave)
+{
+    Clave = clave;
+}
+
+void Vendedor::set_nombre(string nombre)
+{
+    Nombre = nombre;
+}
+
+void Vendedor::set_apellido(string apellido)
+{
+    Apellido = apellido;
+}
+
+
+int Vendedor::get_codigo()
+{
+    return Codigo;
+}
+
+string Vendedor::get_usuario()
+{
+    return Usuario;
+}
+
+string Vendedor::get_clave()
+{
+    return Clave;
+}
+
+string Vendedor::get_nombre()
+{
+    return Nombre;
+}
+
+string Vendedor::get_apellido()
+{
+    return Apellido;
+}
+
+
+#include <string>
+#include <iostream>
+#include <string.h>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <conio.h>
+#include "..\include\vector_productos.h"
+#include "..\include\vector_administradores.h"
+#include "..\include\vector_clientes.h"
+#include "..\include\Vector_Facturas.h"
+#include "..\include\vector_vendedores.h"
+#include <fstream>
+#include <windows.h>
+
+using namespace std;
+
+//Variables Globales
+ProductoVector      vector_de_productos_temporal;
+ProductoVector      vector_de_productos;
+Vector_Facturas     vector_de_facturas;
+AdministradorVector vector_de_administradores;
+Vector_Vendedores   vector_de_vendedores;
+Cliente_vector      vector_de_clientes;
+int                 comprobante1=1;
+int                 comprobante2=1;
+int                 comprobante3=1;
+int                 posicion_vendedor;
+COORD coord={0,0};
+
+//Metodos para que no se vean las contraseñas
+struct cesar 
+{
+	static string Cifrar(string t, int cifra);
+};
+
+inline string cesar::Cifrar(string t, int cifra) 
+{
+	for (int i = 0; i < t.length(); i++) 
+  {
+    t[i] = toupper(t[i]);
+  }
+
+	string r = "";
+	for (auto c : t) 
+  {
+		if (isalpha(c)) 
+    {
+			c += cifra;
+
+			if (c > 'Z') c -= 26;
+			if (c < 'A') c += 26;
+		}
+		r += c;
+	}
+	return r;
+}
+
+//Prototipos
+void   menu_principal();
+void   ventana_usuario();
+void   ventana_administrador();
+void   carrito();
+void   ventana_vendedor();
+void   iniciar_sesion_vendedor();
+void   modificar_precios();
+void   establecer_productos();
+void   ver_productos();
+void   ver_registro_ventas_admi();
+void   ver_registro_ventas_vendedor();
+void   Inicializacion();
+void   crear_vendedor_via_admi();
+void   crear_administrador();
+void   iniciar_sesion_administrador();
+int    get_posicon_por_codigo(ProductoVector vec, int codigo);
+void   eliminar_producto();
+void   ver_comprobante();
+double costo_total();
+void   eliminar_productos_admi();
+void   ver_registro_ventas_vendedor_individual();
+void   gotoxy (int x, int y);
+void   mostrar_vendedores();
+
+
+int main()
+{
+    Inicializacion();
+    return 0;
+}
+
+void menu_principal()
+{
+  int  modo;
+  bool bandera=false;
+
+  do
+  {
+    system("cls"); //Limpiar consola
+    cout << "//**BIENVENIDO**//" <<endl;
+    cout << endl;
+
+    cout <<"Seleccione el modo en el que desea ingresar: " <<endl;
+    cout << endl;
+    cout << "Ingresar como: "        <<endl; 
+    cout << "Usuario            (1)" <<endl;
+    cout << "Administrador      (2)" <<endl;
+    cout << "Vendedor           (3)" <<endl;
+    cout << endl;
+    cout << "SALIR DEL PROGRAMA (4)" <<endl;
+    cout << endl;
+
+    cout << "Opcion: " ;
+    cin  >> modo;
+  
+    system("cls");
+  
+    switch (modo)
+    {
+      case 1: ventana_usuario();           bandera=true; break;
+      case 2: ventana_administrador();     bandera=true; break;
+      case 3: ventana_vendedor();          bandera=true; break;
+      case 4:                              bandera=true; break;
+    
+      default:
+        cout << "(Coloque una de las opciones establecidas)" <<endl; cout <<endl; break;
+    }
+  } 
+  while (bandera==false); 
+}
+
+
+void ventana_usuario()
+{
+  system("cls");
+  bool     bandera3 = false;
+  bool     bandera  = false;
+  Producto objp;
+  bool     bandera2 = false;
+  int      cantidad;
+  int      codigo;
+  int      opcion;
+
+  do
+  {
+    bool     bandera2  = false;
+    int      posicion  = -1;
+    int      posicion2 = -1;
+    do
+    {
+      cout << "**PRODUCTOS DISPONIBLES**" <<endl;
+      cout << endl;
+      
+      //Mostrar productos disponibles
+      cout << "Codigo" <<"\t"  << "Precio" <<"\t" << "Tipo de prodcuto" <<endl;
+      for (size_t i = 0; i < vector_de_productos.cantidad_registros(); i++)
+      {
+        cout <<vector_de_productos.get_objeto(i).get_codigo_producto() <<" \t"  <<vector_de_productos.get_objeto(i).get_precio_unidad()<<"\t"   << vector_de_productos.get_objeto(i).get_tipo_de_producto() <<endl;
+      }
+      cout << endl;
+      cout << "Coloque el codigo del producto que desa comprar: ";
+      cin  >> codigo;
+      cout << endl;
+      
+      for (int i = 0; i < vector_de_productos.cantidad_registros(); i++)
+      {
+        if (codigo == vector_de_productos.get_objeto(i).get_codigo_producto())
+        {
+          bandera = true;
+          posicion = i;
+          break;
+        }
+      }
+      if(posicion == -1)
+      {
+        cout << "Error, coloque un codigo valido!!" <<endl;
+        system("pause");
+        system("cls");
+      }
+    } while (bandera == false);
+    
+    cout << "Producto: " <<vector_de_productos.get_objeto(posicion).get_tipo_de_producto() <<endl;
+    cout << "Coloque la cantidad de unidades que desea comprar: ";
+    cin  >> cantidad;
+    
+
+    if (vector_de_productos_temporal.cantidad_registros()>0)
+    {
+      for (int i = 0; i < vector_de_productos_temporal.cantidad_registros(); i++)
+      {
+        if (vector_de_productos.get_objeto(posicion).get_codigo_producto() == vector_de_productos_temporal.get_objeto(i).get_codigo_producto())
+        {
+          posicion2 = i; 
+          break;
+        }
+      }
+
+      if (posicion2!=-1)
+      {
+        vector_de_productos_temporal.modificiar_cantidad(cantidad + vector_de_productos_temporal.get_objeto(posicion2).get_cantidad(), posicion2);
+        vector_de_productos_temporal.modificiar_precio_total(vector_de_productos.get_objeto(posicion).get_precio_unidad() * vector_de_productos_temporal.get_objeto(posicion2).get_cantidad(), posicion2);
+      }
+    }
+    if (posicion2 == -1)
+    {
+      objp.set_cantidad(cantidad);
+      objp.set_tipo_de_producto(vector_de_productos.get_objeto(posicion).get_tipo_de_producto());
+      objp.set_precio_unidad(vector_de_productos.get_objeto(posicion).get_precio_unidad());
+      objp.set_codigo_producto(vector_de_productos.get_objeto(posicion).get_codigo_producto());
+      objp.set_precio_total(vector_de_productos.get_objeto(posicion).get_precio_unidad() * cantidad);
+      objp.set_codigo_vendedor(vector_de_vendedores.get_objeto(posicion_vendedor).get_codigo());
+
+      vector_de_productos_temporal.agregar_productos(objp);
+    }
+
+
+    do
+    {
+      system("cls"); //Limpiar consola
+      cout << "//**BIENVENIDO**//" <<endl;
+      cout << endl;
+
+      carrito();
+      cout << endl;
+      cout << "Agregar otro producto              (1)" <<endl;
+      cout << "Eliminar un producto del carrito   (2)" <<endl;
+      cout << endl;
+      cout << "FINALIZAR COMPRA                   (3)" <<endl;
+      cout << endl;
+
+      cout << "Opcion: " ;
+      cin  >> opcion;
+      cin.ignore();
+    
+      system("cls");
+    
+      switch (opcion)
+      {
+        case 1:                              bandera2=true;                     break;
+        case 2: eliminar_producto();                                            break;
+        case 3: ver_comprobante();           bandera2=true; bandera3=true;      break;
+      
+        default:
+          cout << "(Error, Coloque una de las opciones establecidas)" <<endl; cout <<endl; system("pause"); break;
+      }
+    } 
+    while (bandera2==false);   
+  } 
+  while (bandera3 == false);
+}
+
+
+void ventana_administrador()
+{
+  system("cls");
+  int    opcion;
+  bool   bandera=false;
+
+  if (comprobante1==1)
+  {
+    iniciar_sesion_administrador();
+  }
+  do
+  {
+    cout << "//**BIENVENIDO**//" <<endl;
+    cout << "Modo: Administrador" <<endl;
+    cout << endl;
+
+    cout << "Modificar precios                          (1) " <<endl;
+    cout << "Ver registro de ventas                     (2) " <<endl;
+    cout << "Ver registro de vendedores                 (3) " <<endl;
+    cout << "Ver vendedores registrados                 (4) " <<endl;
+    cout << "Ver los productos con su respectivo precio (5) " <<endl;
+    cout << "Agregar otro usuario de administrador      (6) " <<endl;
+    cout << "Agregar usarios de vendedores              (7) " <<endl;
+    cout << "Agregar producto                           (8) " <<endl;
+    cout << "Eliminar producto                          (9) " <<endl;
+    cout << endl;
+    cout << "Cambiar a modo usuario                     (10) " <<endl;
+    cout << "Cambiar a modo vendedor                    (11) " <<endl;
+    cout << "SALIR DEL PROGRAMA                         (12) " <<endl;
+    cout <<endl;
+     
+    cout << "Seleccione una opcion: ";
+
+    cin  >> opcion;
+    system("cls");
+
+    switch (opcion)
+    {
+      case 1: modificar_precios();                                                    break;
+      case 2: ver_registro_ventas_admi();                                             break;
+      case 3: ver_registro_ventas_vendedor();                                         break;
+      case 4: mostrar_vendedores();                                                   break;
+      case 5: ver_productos();                                                        break;
+      case 6: crear_administrador();                                                  break;
+      case 7: crear_vendedor_via_admi();                                              break;
+      case 8: establecer_productos();                                                 break;
+      case 9: eliminar_productos_admi();                                              break;
+      case 10: 
+              comprobante1=1;
+              if (comprobante3 == 1)
+              {
+                cout << "Antes de iniciar como usario debe tener un vendedor asiganado" <<endl;
+                system("pause");
+                system("cls");
+                iniciar_sesion_vendedor();
+              }
+              
+              ventana_usuario();            
+              bandera=true; 
+              break;
+      case 11: comprobante1=1;             iniciar_sesion_vendedor();    bandera=true; break;
+      case 12:                                                           bandera=true; break;
+        
+      default:
+        cout << "Error, coloque una de las opcionesestablecidas" <<endl;
+        cout << endl;
+      break;
+    }
+    } while (bandera==false);
+}
+
+
+void modificar_precios()
+{
+  bool    bandera  =  false;
+  bool    bandera2 =  false;
+  bool    bandera3 =  false;
+  int     codigo;
+  int     posicion;
+  double  precio;
+  string  respuesta;
+
+  do
+  {
+    cout << "**PRODUCTOS**" <<endl;
+    cout << endl;
+     
+    cout << "Codigo" <<"\t \t" <<"Pecio" <<"\t \t" <<"Producto"  <<endl;
+
+    for (size_t i = 0; i < vector_de_productos.cantidad_registros(); i++)
+    {
+      cout << vector_de_productos.get_objeto(i).get_codigo_producto() <<"\t \t" <<vector_de_productos.get_objeto(i).get_precio_unidad() <<"\t \t" <<vector_de_productos.get_objeto(i).get_tipo_de_producto()<<endl;
+    }
+
+    do
+    {
+      cout << "Coloque el codigo del producto cuyo precio desea modificar: ";
+      cin  >> codigo;
+      
+      for (int i = 0; i < vector_de_productos.cantidad_registros(); i++)
+      {
+        if (codigo == vector_de_productos.get_objeto(i).get_codigo_producto())
+        {
+          bandera = true;
+          posicion = i;
+        }
+      }
+      if (bandera == false)
+      {
+        cout << "Error, coloque un codigo valido!!" <<endl;
+        system("pause");
+        system("cls");
+      }
+    } while (bandera == false);
+
+    cout << endl;
+    cout << "Coloque el nuevo precio de los " <<vector_de_productos.get_objeto(posicion).get_tipo_de_producto() <<endl;
+    cout << "Nuevo Precio: ";
+    cin  >> precio;
+
+    vector_de_productos.modificiar_precio(precio,posicion);
+    vector_de_productos.grabar_modificar_eliminar_archivo();
+    cout <<endl;
+    cout << "Precio Establecido" <<endl;
+    cout <<endl;
+
+    do
+    {
+      cout << "Desea modificar otro precio? (si/no): " <<endl;
+      cin  >> respuesta;
+      if (respuesta == "si" || respuesta =="SI")
+      {
+        bandera2 = false;
+        bandera3 = true;
+      }
+      else if (respuesta == "no" || respuesta =="NO")
+      {
+        bandera2 = true;
+        bandera3 = true;
+      }
+      else
+      {
+        cout << "Error, coloque una de las opcines establecidas";
+        system("pause");
+        system("cls");
+      }
+    } 
+    while (bandera3 == false);
+  
+
+    system("cls");
+  } 
+  while (bandera2 == false);
+}
+
+
+void carrito()
+{
+  if (vector_de_productos_temporal.cantidad_registros()==0)
+  {
+    cout << "****************************************************" <<endl;
+    cout << "Carrito de compra:" <<endl;
+    cout << "Producto" <<"\t"  << "Codigo" <<"\t" <<"Precio" <<"\t" <<"Cantidad"  <<"\t"   <<"Costo Total"  <<endl;
+    cout << endl;
+    cout << "////////////////////" <<endl;
+    cout << "Total de la compra: " <<endl;
+    cout << endl;
+  }
+  else
+  {
+    gotoxy(0,3);  cout << "*******************" <<endl;
+    gotoxy(0,4);  cout << "Carrito de compra:" <<endl;
+    gotoxy(0,5);  cout << "Producto";
+    gotoxy(20,5); cout << "Codigo"; 
+    gotoxy(40,5); cout << "Precio"; 
+    gotoxy(60,5); cout << "Cantidad";   
+    gotoxy(80,5); cout << "Costo Total"  <<endl;
+
+    for (int i=0; i<vector_de_productos_temporal.cantidad_registros(); i++)
+    {
+        gotoxy(0,6+i);  cout  <<vector_de_productos_temporal.get_objeto(i).get_tipo_de_producto();
+        gotoxy(20,6+i); cout  <<vector_de_productos_temporal.get_objeto(i).get_codigo_producto();       
+        gotoxy(40,6+i); cout  <<vector_de_productos_temporal.get_objeto(i).get_precio_unidad();         
+        gotoxy(60,6+i); cout  <<vector_de_productos_temporal.get_objeto(i).get_cantidad();    
+        gotoxy(80,6+i); cout  <<vector_de_productos_temporal.get_objeto(i).get_precio_total() <<endl;
+    }
+
+    cout << endl;
+    gotoxy(0,7 + vector_de_productos_temporal.cantidad_registros()); cout << "////////////////////"  <<endl;
+    gotoxy(0,8 + vector_de_productos_temporal.cantidad_registros()); cout << "Total de la compra: " <<costo_total() <<endl;
+    cout << endl;
+  }  
+}
+
+
+void establecer_productos()
+{
+  Producto objP;
+  double   precio;
+  string   tipo_producto;
+  int      codigo;
+  int      respuesta;
+  bool     bandera=false;
+  bool     bandera2=false;
+  bool     bandera3=false;
+  int      comprobante = 1;
+
+  do
+  {
+    cout << "**BIENVENDIO**" <<endl;
+    cout <<endl;
+    cout << "**Proceso de agregado de productos**" <<endl;
+
+    do
+    {
+      cout << "Coloque el tipo de producto: ";
+      cin  >> tipo_producto;
+      cout << endl;
+
+      for (int i = 0; i < vector_de_productos.cantidad_registros(); i++)
+      {
+        if (tipo_producto == vector_de_productos.get_objeto(i).get_tipo_de_producto())
+        {
+          cout << "Error, ese producto ya ha sido colocado, coloque otro" <<endl;
+          comprobante = -1;
+          system("pause");
+          system("cls");
+          break;
+        }
+        else
+        {
+          comprobante = 1;
+        }
+      }
+
+      if (comprobante == 1)
+      {
+        bandera3 = true;
+      }
+    } 
+    while (bandera3 == false);
+    
+    
+    cout << "Precio: ";
+    cin  >> precio;
+    cin.ignore();
+
+    codigo = vector_de_productos.get_correlativo();
+    objP.set_tipo_de_producto(tipo_producto);
+    objP.set_precio_unidad(precio);
+    objP.set_codigo_producto(codigo);
+
+    vector_de_productos.agregar_productos(objP);
+    vector_de_productos.guardar_archivo_producto(objP);
+    system("cls");
+
+    do
+    {
+      cout << "Desea agregar otro producto, coloque 1 o 2? " <<endl;
+      cout << "Si (1)" <<endl;
+      cout << "No (2)" <<endl;
+
+      cout << endl;
+      cout << "Opcion: ";
+      cin  >> respuesta;
+
+      switch (respuesta)
+      {
+        case 1:
+          system("cls");
+          bandera  = false;
+          bandera2 = true;
+          bandera3 = false;
+        break;
+
+        case 2:
+          system("cls");
+          bandera  = true;
+          bandera2 = true;
+        break;
+      
+      default:
+          cout << "Error, coloque una de las opciones establecidas" <<endl;
+          system("pause");
+          system("cls");
+        break;
+    } 
+    }while (bandera2==false);
+   
+  }while (bandera==false); 
+}
+
+
+void Inicializacion()
+{
+  vector_de_vendedores.cargar_vendedores_archivo();
+  vector_de_administradores.cargar_admis_archivo();
+  vector_de_productos.cargar_productos_archivos();
+  vector_de_clientes.cargar_clientes_archivo();
+  vector_de_facturas.cargar_facturas();
+
+  if (vector_de_administradores.cantidad_de_registros_admi()==0)
+  {
+    system("cls");
+    cout << "**Bienvenido**" <<endl;
+    cout << "Cree un usario de tipo Administrador: " <<endl;
+    cout << endl;
+    crear_administrador();
+    establecer_productos();
+    crear_vendedor_via_admi();
+    comprobante1=0;
+    ventana_administrador();
+  }
+  else
+  {
+    int  modo;
+    bool bandera = false;
+
+    do
+    {
+      system("cls"); //Limpiar consola
+      cout << "//**BIENVENIDO**//" <<endl;
+      cout << endl;
+
+      cout <<"Seleccione el modo en el que desea ingresar: " <<endl;
+      cout << endl;
+      cout << "Ingresar como: "        <<endl; 
+      cout << "Administrador      (1)" <<endl;
+      cout << "Vendedor           (2)" <<endl;
+      cout << endl;
+      cout << "SALIR DEL PROGRAMA (4)" <<endl;
+      cout << endl;
+
+      cout << "Opcion: " ;
+      cin  >> modo;
+    
+      system("cls");
+    
+      switch (modo)
+      {
+        case 1: iniciar_sesion_administrador(); ventana_administrador();     bandera=true; break;
+        case 2: iniciar_sesion_vendedor();                                   bandera=true; break;
+        case 4:                                                              bandera=true; break;
+      
+        default:
+          cout << "(Coloque una de las opciones establecidas)" <<endl; cout <<endl; break;
+      }
+    } 
+    while (bandera==false); 
+  }
+}
+
+
+void ver_productos()
+{
+  cout << "**PRODUCTOS**" <<endl;
+  cout << endl;
+    
+  cout << "Codigo" <<"\t \t"  << "Precio" <<"\t \t"  << "Tipo de producto" <<"\t \t" <<endl;
+  for (size_t i = 0; i < vector_de_productos.cantidad_registros(); i++)
+  {
+    cout  <<vector_de_productos.get_objeto(i).get_codigo_producto() <<"\t \t" <<vector_de_productos.get_objeto(i).get_precio_unidad()  <<"\t \t" << vector_de_productos.get_objeto(i).get_tipo_de_producto() <<endl;
+  }
+
+  system("pause");
+}
+
+
+void crear_administrador()
+{
+  int cifra = 17;
+  int ch;
+  string clave;
+  Administrador obj_PRUEBA;
+  string usuario;
+
+  cout << "Cree su usuario: ";
+  cin  >> usuario;
+  cout << endl;
+  obj_PRUEBA.set_usaurio(usuario);
+
+
+  cout << "Cree su clave: " ;
+  ch = getch();
+  while (ch !=13) // 13 ASCCI ENTER //
+  {
+    if(ch !=8)  // 8 BACKSPACE //
+    {
+      clave.push_back(ch);
+      cout << "*";
+    }
+    else
+    {
+      if(clave.size() > 0)
+      {
+        cout << "\b \b";
+        clave = clave.substr(0, clave.size() -1);
+      }
+    }
+    ch = getch();
+  } 
+  clave = cesar::Cifrar(clave,cifra);
+
+
+  obj_PRUEBA.set_clave(clave);
+
+  cout << endl;
+  
+  vector_de_administradores.agregar_admis(obj_PRUEBA);
+  vector_de_administradores.guardar_admis_archivo(obj_PRUEBA);
+  system("pause");
+  system("cls");
+}
+
+
+void iniciar_sesion_administrador()
+{
+  system("cls");
+  int    cifra = 17;
+  string usuario;
+  int    respuesta1;
+  int    respuesta2;
+  string clave;
+  bool   bandera2=false;
+  int    ch;
+
+  do
+  {
+    cout << endl;
+    cout << "Ingrese sus datos: " <<endl;
+    cout << endl;
+    cout << "Usuario: " ;
+    cin  >> usuario;
+    cout << "Clave: ";
+
+    ch = getch();
+    while (ch !=13) // 13 ASCCI ENTER //
+    {
+      if(ch !=8)  // 8 BACKSPACE //
+      {
+        clave.push_back(ch);
+        cout << "*";
+      }
+      else
+      {
+        if(clave.size() > 0)
+        {
+          cout << "\b \b";
+          clave = clave.substr(0, clave.size() -1);
+        }
+      }
+       ch = getch();
+    } 
+    clave = cesar::Cifrar(clave,cifra);
+
+    cout << endl;
+    system("cls");
+
+    respuesta1 = vector_de_administradores.buscar_por_usuario(usuario);
+    respuesta2 = vector_de_administradores.buscar_por_clave(clave);
+    if (respuesta1!=1)
+    {
+      cout << "Error, nombre de usuario incorrecto" <<endl;
+      clave = "";
+    }
+    if (respuesta2!=1)
+    {
+      cout << "Error, clave de usuario incorrecta" <<endl;
+      clave = "";
+    }
+    if (respuesta1==1 && respuesta2==1)
+    {
+      bandera2=true;
+    }
+  } 
+  while (bandera2==false);
+
+  comprobante1=0;
+
+  ventana_administrador();
+}
+
+
+void eliminar_producto()
+{
+  int    codigo;
+  int    posicion;
+  double costo_producto;
+  bool   bandera = false;
+
+  do
+  {
+    system("cls"); //Limpiar consola
+    cout << "//**BIENVENIDO**//" <<endl;
+    cout << endl;
+
+    carrito();
+    cout << endl;
+
+    cout << "Coloque el codigo del producto que dese eliminar: " ;
+    cin  >> codigo;
+    posicion = get_posicon_por_codigo(vector_de_productos_temporal, codigo);
+
+    if (posicion == -1)
+    {
+      cout << "Error, coodigo no encontrado" <<endl;
+      system("pause");
+      system("cls");
+    }
+    else
+    {
+      bandera = true;
+    }
+  } 
+  while (bandera == false);
+
+  vector_de_productos_temporal.eliminar_productos(posicion);
+  
+    
+    
+  cout << endl;
+  cout << "***Producto Eliminado***" <<endl;
+  system("pause");
+  system("cls");
+}
+
+
+void ver_comprobante()
+{
+  Cliente  ObjC;
+  Vendedor ObjV;
+  string   nombre;
+  string   apellido;
+  string   correo;
+  string   direccion;
+  string   dia_compra;
+  string   mes_compra;
+  string   fecha_a_compra;
+  int      codigo_cliente;
+  int      tarjeta;
+  int      mes;
+  int      fecha;
+  int      codigo_tarjeta;
+  
+  cout << "Coloque los siguientes datos: " <<endl;
+  cout << endl;
+
+  cout << "Correo: ";
+  cin  >> correo;
+  cout << "Nombre: ";
+  cin  >> nombre;
+  cout << "Apellido: ";
+  cin  >> apellido;
+  cout << "Direccion: ";
+  cin  >> direccion;
+  cout << endl;
+  cout << "Fecha" <<endl;
+  cout << "Day: ";
+  cin  >> dia_compra;
+  cout << "Month: ";
+  cin  >> mes_compra;
+  cout << "Year: ";
+  cin  >> fecha_a_compra;
+  cout << endl;
+
+  cout << "**METODO DE PAGO**"    <<endl;
+  cout << "Numero de tarjeta: ";
+  cin  >> tarjeta;
+  cout << "Month: ";
+  cin  >> mes;
+  cout << "Year: ";
+  cin  >> fecha;
+  cout << "Codigo de seguridad: ";
+  cin  >> codigo_tarjeta;
+  system("cls");
+
+  cout << "*GRACIAS POR SU COMPRA*!!" <<endl;
+  cout << "Hola " <<nombre <<" su compra ha sido procesada, este es el resumen: " <<endl;
+  cout << endl;
+  carrito();
+  cout << endl;
+  gotoxy(0,10+vector_de_productos_temporal.cantidad_registros()); cout << "Fecha: " <<dia_compra <<"/" <<mes_compra <<"/" <<fecha_a_compra <<endl;
+  system("pause");
+  system("cls");
+
+  ObjC.set_nombre(nombre);
+  ObjC.set_apellido(apellido);
+  ObjC.set_correo(correo);
+  ObjC.set_direccion(direccion);
+  ObjC.set_dia(dia_compra);
+  ObjC.set_mes(mes_compra);
+  ObjC.set_fecha_a(fecha_a_compra);
+  codigo_cliente = vector_de_clientes.get_correlativo_codigo_compra();
+  ObjC.set_codigo(codigo_cliente);
+
+  vector_de_clientes.agregar_clientes(ObjC);
+  vector_de_clientes.guardar_clientes_archivo(ObjC);
+
+
+
+  for (int i = 0; i <vector_de_productos_temporal.cantidad_registros(); i++)
+  {
+    if (vector_de_productos_temporal.get_objeto(i).get_cantidad()>0)
+    {
+      vector_de_productos_temporal.modificiar_codigo_compra(codigo_cliente,i);
+      vector_de_facturas.guardar_factura(vector_de_productos_temporal.get_objeto(i));
+      vector_de_facturas.agregar_compra(vector_de_productos_temporal.get_objeto(i));
+    }
+  }
+
+
+  vector_de_productos_temporal.vaciar_vector();
+
+  menu_principal();
+  
+}
+
+
+void ver_registro_ventas_admi()
+{
+  double total=0;
+  int aumento   = 0;
+  int aumento_final = 0;
+
+  for (int i = 0; i < vector_de_clientes.cantidad_de_registros_cliente() ; i++)
+  {
+    gotoxy(0,1+aumento_final); cout << "Datos del cliente: ";
+    gotoxy(0,2+ aumento_final);   cout << "Nombre";   
+    gotoxy(40,2+ aumento_final);  cout << "Apellido";   
+    gotoxy(80,2+ aumento_final);  cout << "Correo";   
+    gotoxy(120,2+ aumento_final); cout << "Direccion";   
+    gotoxy(150,2+ aumento_final); cout << "Fecha";
+    gotoxy(0,3+aumento_final);   cout << "---------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+    gotoxy(0,4+aumento_final);   cout << vector_de_clientes.get_objeto(i).get_nombre(); 
+    gotoxy(40,4+aumento_final);  cout << vector_de_clientes.get_objeto(i).get_apellido();  
+    gotoxy(80,4+aumento_final);  cout << vector_de_clientes.get_objeto(i).get_correo(); 
+    gotoxy(120,4+aumento_final); cout << vector_de_clientes.get_objeto(i).get_direccion(); 
+    gotoxy(150,4+aumento_final); cout << vector_de_clientes.get_objeto(i).get_dia() <<"/" <<vector_de_clientes.get_objeto(i).get_mes() <<"/" <<vector_de_clientes.get_objeto(i).get_fecha_a();
+    cout << endl;
+
+    gotoxy(0,6+aumento_final);  cout << "*COMPRA*: ";
+    gotoxy(0,7+aumento_final);  cout << "Producto";
+    gotoxy(20,7+aumento_final); cout << "Precio"; 
+    gotoxy(40,7+aumento_final); cout << "Cantidad";   
+    gotoxy(60,7+aumento_final); cout << "Costo Total";
+
+    int k = 0;
+    for (int j=0; j < vector_de_facturas.cantidad_facturas_registros(); j++)
+    {
+      if (vector_de_clientes.get_objeto(i).get_codigo() == vector_de_facturas.get_objeto(j).get_codigo_compra())
+      {
+        gotoxy(0,8  + k + aumento_final);  cout  <<vector_de_facturas.get_objeto(j).get_tipo_de_producto();      
+        gotoxy(20,8 + k + aumento_final);  cout  <<vector_de_facturas.get_objeto(j).get_precio_unidad();         
+        gotoxy(40,8 + k + aumento_final);  cout  <<vector_de_facturas.get_objeto(j).get_cantidad();    
+        gotoxy(60,8 + k + aumento_final);  cout  <<vector_de_facturas.get_objeto(j).get_precio_total() <<endl;
+              
+        total = total + vector_de_facturas.get_objeto(j).get_precio_total();
+        aumento = k + aumento_final;
+        k++;
+      }
+    } 
+    //cout << endl;
+    gotoxy(0,10 + aumento ); cout << "-----------------------------------------"; 
+    gotoxy(0,11 + aumento );  cout << "Total de la compra: " <<total <<endl;
+
+    aumento_final = 12 + aumento;
+
+    total = 0;
+
+  }
+   gotoxy(0,13 + aumento);   system("pause"); system("cls");
+}
+
+
+int get_posicon_por_codigo(ProductoVector vec, int codigo)
+{
+    for(int i=0; i<vec.cantidad_registros(); i++)
+    {
+        if (codigo == vec.get_objeto(i).get_codigo_producto())
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+void ventana_vendedor()
+{
+  system("cls");
+  bool   bandera1 = false;
+  int    opcion;
+  do
+  {
+    cout << "//**BIENVENIDO**//" <<endl;
+    cout << "Modo: Vendedor" <<endl;
+    cout << endl;
+
+    cout << "Ver registro de ventas       (1)" <<endl;
+    cout << endl;
+    cout << "Cambiar a modo Administrador (2)" <<endl;
+    cout << "Cambiar a modo Usuario       (3)" <<endl;
+    cout << endl;
+    cout << "*SALIR DEL PROGRAMA*         (4)" <<endl;
+    cout << "Opcion: ";
+    cin  >> opcion;
+
+    switch (opcion)
+    {
+    case 1:
+      ver_registro_ventas_vendedor_individual();
+    break;
+
+    case 2:
+      iniciar_sesion_administrador();
+      bandera1 = true;
+    break;
+
+    case 3:
+      ventana_usuario();
+      bandera1 = true;
+    break;
+
+    case 4:
+      bandera1 = true;
+    break;
+    
+    default:
+      cout << endl;
+      cout << "Error, coloque una de las opciones establecidas!!!" <<endl;
+      cout << endl;
+      system("pause");
+      system("cls");
+      break;
+    }
+  } 
+  while (bandera1 == false);
+}
+
+
+void iniciar_sesion_vendedor()
+{
+  system ("cls");
+  int    cifra = 17;
+  string usuario;
+  int    respuesta1;
+  int    respuesta2;
+  string clave;
+  bool   bandera2=false;
+  int    ch;
+
+  do
+  {
+    cout << "//**BIENVENIDO**//" <<endl;
+    cout << "Modo: Vendedor" <<endl;
+    cout << endl;
+    cout << "Ingrese sus datos: " <<endl;
+    cout << endl;
+    cout << "Usuario: " ;
+    cin  >> usuario;
+    cout << endl;
+    cout << "Clave: ";
+
+    ch = getch();
+    while (ch !=13) // 13 ASCCI ENTER //
+    {
+      if(ch !=8)  // 8 BACKSPACE //
+      {
+        clave.push_back(ch);
+        cout << "*";
+      }
+      else
+      {
+        if(clave.size() > 0)
+        {
+          cout << "\b \b";
+          clave = clave.substr(0, clave.size() -1);
+        }
+      }
+       ch = getch();
+    } 
+    clave = cesar::Cifrar(clave,cifra);
+
+    cout << endl;
+    system("cls");
+
+    respuesta1 = vector_de_vendedores.buscar_por_usuario(usuario);
+    
+    for (int i = 0; i < vector_de_vendedores.cantidad_registros(); i++)
+    {
+      if (clave == vector_de_vendedores.get_objeto(i).get_clave())
+      {
+        respuesta2 = 1;
+        posicion_vendedor = i;
+        break;
+      }
+    }
+    
+    if (respuesta1!=1)
+    {
+      cout << "Error, nombre de usuario incorrecto" <<endl;
+      clave = "";
+    }
+    if (respuesta2!=1)
+    {
+      cout << "Error, clave de usuario incorrecta" <<endl;
+      clave = "";
+    }
+    if (respuesta1==1 && respuesta2==1)
+    {
+      bandera2=true;
+    }
+  } 
+  while (bandera2==false);
+
+  comprobante3 = 0;
+
+  ventana_vendedor();
+}
+
+
+void crear_vendedor_via_admi()
+{
+  int cifra = 17;
+  Vendedor objV;
+  #define  MAX_DIGITS 10
+  int      num_vendedor;
+  string   usuario;
+  int      codigo;
+  string   nombre;
+  string   apellido;
+
+	srand(time(NULL));
+		
+	cout << "ingresar numero de vendedores a crear: "; 
+  cin  >> num_vendedor;
+  cin.ignore();
+  cout << endl;
+		
+	for(int i=0;i<num_vendedor;i++)
+	{
+    cout << "Datos del Vendedor " <<i+1 <<endl;
+    cout << endl;
+		fflush(stdin);
+    cout << "Nombre: ";
+    cin  >> nombre;
+    cout << "Apellido: ";
+    cin  >> apellido;
+		cout << "Usuario: ";
+    cin  >> usuario;
+    cout << endl;
+
+		int    num;
+    string clave;
+    
+		num = 1000+rand()%(10000);
+
+
+		//Imprimir usuario
+		cout <<"User: "   <<usuario <<endl;
+		//imprimir contraseña
+    clave = "ven" + to_string(num);
+		cout <<"Password: "   <<clave  <<endl;
+    cout <<endl;
+    system("pause");
+    system("cls");
+
+    clave = cesar::Cifrar(clave,cifra);
+
+    objV.set_usuario(usuario);
+    objV.set_clave(clave);
+    objV.set_nombre(nombre);
+    objV.set_apellido(apellido);
+    codigo = vector_de_vendedores.get_correlativo_codigo_vendedor();
+    objV.set_codigo(codigo);
+    vector_de_vendedores.agregar_usuario(objV);
+    vector_de_vendedores.guardar_vendedores_archivo(objV);
+
+    
+    clave="";
+	}
+}
+
+
+void ver_registro_ventas_vendedor()
+{
+  system("cls");
+  double total=0;
+  int    comprobante    = -1;
+  int    aumento        = 0;
+  int    aumento_final  = 0;
+
+
+  for (int i = 0; i < vector_de_vendedores.cantidad_registros(); i++)
+  {
+    int k = 0;
+    for (int j = 0; j < vector_de_facturas.cantidad_facturas_registros(); j++)
+    {
+      if (vector_de_vendedores.get_objeto(i).get_codigo() == vector_de_facturas.get_objeto(j).get_codigo_vendedor())
+      {
+        if (comprobante == -1)
+        {
+          gotoxy(0,1  + aumento_final);   cout << "Datos del vendedor: ";
+          gotoxy(0,2  + aumento_final);   cout << "Nombre";   
+          gotoxy(20,2 + aumento_final);   cout << "Apellido";   
+          gotoxy(40,2 + aumento_final);   cout << "Usuario";
+          gotoxy(0,3  + aumento_final);   cout << "------------------------------------------------------------------------------------------"<<endl;
+          gotoxy(0,4  + aumento_final);   cout << vector_de_vendedores.get_objeto(i).get_nombre(); 
+          gotoxy(20,4 + aumento_final);   cout << vector_de_vendedores.get_objeto(i).get_apellido();  
+          gotoxy(40,4 + aumento_final);   cout << vector_de_vendedores.get_objeto(i).get_usuario();
+
+          gotoxy(0,6  + aumento_final);   cout << "**COMPRA**: ";
+          gotoxy(0,7  + aumento_final);   cout << "Producto";
+          gotoxy(20,7 + aumento_final);   cout << "Precio"; 
+          gotoxy(40,7 + aumento_final);   cout << "Cantidad";   
+          gotoxy(60,7 + aumento_final);   cout << "Costo Total";
+
+          comprobante = 1;
+        }
+        gotoxy(0,8+k  + aumento_final );  cout  <<vector_de_facturas.get_objeto(j).get_tipo_de_producto();      
+        gotoxy(20,8+k + aumento_final); cout  <<vector_de_facturas.get_objeto(j).get_precio_unidad();         
+        gotoxy(40,8+k + aumento_final); cout  <<vector_de_facturas.get_objeto(j).get_cantidad();    
+        gotoxy(60,8+k + aumento_final); cout  <<vector_de_facturas.get_objeto(j).get_precio_total();
+              
+        total = total + vector_de_facturas.get_objeto(j).get_precio_total();
+        aumento = k + aumento_final;
+        k++;
+      }
+    } 
+    comprobante = -1;
+    if (total>0)
+    {
+      gotoxy(0,10 + aumento); cout << "----------------------" ;
+      gotoxy(0,11 + aumento); cout << "Total de la compra: " <<total;
+
+      aumento_final = 12 + aumento;
+    }
+    total = 0;
+  }
+  gotoxy(0,13 + aumento); system("pause");
+}
+
+
+double costo_total()
+{
+  double costo = 0;
+
+  for (int i = 0; i < vector_de_productos_temporal.cantidad_registros(); i++)
+  {
+    costo = costo + vector_de_productos_temporal.get_objeto(i).get_precio_total();
+  }
+  
+  return costo; 
+}
+
+
+void eliminar_productos_admi()
+{
+  int    codigo;
+  int    posicion;
+  double costo_producto;
+  bool   bandera = false;
+
+  do
+  {
+    ver_productos();
+    cout << endl;
+
+    cout << "Coloque el codigo del producto que dese eliminar: " ;
+    cin  >> codigo;
+    posicion = get_posicon_por_codigo(vector_de_productos, codigo);
+
+    if (posicion == -1)
+    {
+      cout << "Error, coodigo no encontrado" <<endl;
+      system("pause");
+      system("cls");
+    }
+    else
+    {
+      bandera = true;
+    }
+  } 
+  while (bandera == false);
+
+  vector_de_productos.eliminar_productos(posicion);
+  vector_de_productos.grabar_modificar_eliminar_archivo();
+  
+    
+    
+  cout << endl;
+  cout << "***Producto Eliminado***" <<endl;
+  system("pause");
+  system("cls");
+}
+
+
+void gotoxy (int x, int y)
+{
+    coord.X=x;
+    coord.Y=y;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+
+
+void ver_registro_ventas_vendedor_individual()
+{
+  system("cls");
+  double total=0;
+  int    comprobante    = -1;
+  int    k              = 0;
+  
+    
+    for (int j = 0; j < vector_de_facturas.cantidad_facturas_registros(); j++)
+    {
+      if (vector_de_vendedores.get_objeto(posicion_vendedor).get_codigo() == vector_de_facturas.get_objeto(j).get_codigo_vendedor())
+      {
+        if (comprobante == -1)
+        {
+          gotoxy(0,1);    cout << "Datos del vendedor: ";
+          gotoxy(0,2);    cout << "Nombre";   
+          gotoxy(20,2);   cout << "Apellido";   
+          gotoxy(40,2);   cout << "Usuario";
+          gotoxy(0,3);    cout << "-----------------------------------"<<endl;
+          gotoxy(0,4);    cout << vector_de_vendedores.get_objeto(posicion_vendedor).get_nombre(); 
+          gotoxy(20,4);   cout << vector_de_vendedores.get_objeto(posicion_vendedor).get_apellido();  
+          gotoxy(40,4);   cout << vector_de_vendedores.get_objeto(posicion_vendedor).get_usuario();
+
+          gotoxy(0,6);    cout << "**COMPRA**: ";
+          gotoxy(0,7);    cout << "Producto";
+          gotoxy(20,7);   cout << "Precio"; 
+          gotoxy(40,7);   cout << "Cantidad";   
+          gotoxy(60,7);   cout << "Costo Total";
+
+          comprobante = 1;
+        }
+        gotoxy(0,8  +k);   cout  <<vector_de_facturas.get_objeto(j).get_tipo_de_producto();      
+        gotoxy(20,8 +k);   cout  <<vector_de_facturas.get_objeto(j).get_precio_unidad();         
+        gotoxy(40,8 +k);   cout  <<vector_de_facturas.get_objeto(j).get_cantidad();    
+        gotoxy(60,8 +k);   cout  <<vector_de_facturas.get_objeto(j).get_precio_total();
+              
+        total = total + vector_de_facturas.get_objeto(j).get_precio_total();
+        k++;
+      }
+    } 
+    if (total>0)
+    {
+      gotoxy(0,10 + k); cout << "---------------------------------------" ;
+      gotoxy(0,11 + k); cout << "Total de la compra: " <<total;
+    }
+    total = 0;
+
+  gotoxy(0,13 + k); system("pause"); system("cls");
+}
+
+void mostrar_vendedores()
+{
+  for(int i=0; i<vector_de_vendedores.cantidad_registros(); i++)
+  {
+    cout << "Nombre: "   <<vector_de_vendedores.get_objeto(i).get_nombre() <<endl;
+    cout << "Apellido: " <<vector_de_vendedores.get_objeto(i).get_apellido() <<endl;
+    cout << "Usuario: "  <<vector_de_vendedores.get_objeto(i).get_usuario() <<endl;
+    cout << endl;
+    cout << endl;
+  }
+  system("pause");
+}
